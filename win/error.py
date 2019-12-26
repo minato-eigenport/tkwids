@@ -42,6 +42,26 @@ class critErrWin(baseWin):
         okButton.pack(fill='x', expand=True)
 
 
+class initErrWin(baseWin):
+    def __init__(self, root, msg, title, okBtnTxt):
+        # init
+        self.root = root
+        self.root.title(title)
+        # widget
+        frame = tk.Frame(self.root)
+        label = tk.Label(
+            frame, foreground='red',
+            text=msg, justify="left")
+        okButton = tk.Button(
+            frame,
+            text=okBtnTxt,
+            command=quit)
+        # pack
+        frame.pack(fill='both', expand=True)
+        label.pack(padx=20, pady=10)
+        okButton.pack(fill='x', expand=True)
+
+
 def show(msg, title='Error', okBtnTxt='exit'):
     errWin(msg, title, okBtnTxt).root.wait_window()
     return True
@@ -49,3 +69,9 @@ def show(msg, title='Error', okBtnTxt='exit'):
 
 def showCrit(msg, title='Error', okBtnTxt='exit'):
     critErrWin(msg, title, okBtnTxt)
+
+
+def showInitError(msg, title='Error', okBtnTxt='exit'):
+    root = tk.Tk()
+    _ = initErrWin(root, msg, title, okBtnTxt)
+    root.mainloop()
