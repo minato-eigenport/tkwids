@@ -42,10 +42,11 @@ class critErrWin(baseWin):
         okButton.pack(fill='x', expand=True)
 
 
-class initErrWin(baseWin):
+class initErrWin():
     def __init__(self, root, msg, title, okBtnTxt):
         # init
         self.root = root
+        #self.root.resizable(False, False)
         self.root.title(title)
         # widget
         frame = tk.Frame(self.root)
