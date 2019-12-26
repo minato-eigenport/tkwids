@@ -45,7 +45,7 @@ def runTest4():
 
 
 def runTest5():
-    cp.show('this message will copied')
+    cp.show('this message will copied', nobar=True)
 
 
 if __name__ == "__main__":

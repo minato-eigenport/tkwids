@@ -3,7 +3,7 @@ from base import baseWin
 
 
 class errWin(baseWin):
-    def __init__(self, msg, title='Message', okBtnTxt='OK'):
+    def __init__(self, msg, title, okBtnTxt):
         # init
         super().__init__()
         self.root.title(title)
@@ -23,7 +23,7 @@ class errWin(baseWin):
 
 
 class critErrWin(baseWin):
-    def __init__(self, msg, title='Message', okBtnTxt='OK'):
+    def __init__(self, msg, title, okBtnTxt):
         # init
         super().__init__()
         self.root.title(title)
@@ -42,10 +42,10 @@ class critErrWin(baseWin):
         okButton.pack(fill='x', expand=True)
 
 
-def show(msg):
-    errWin(msg).root.wait_window()
+def show(msg, title='Error', okBtnTxt='exit'):
+    errWin(msg, title, okBtnTxt).root.wait_window()
     return True
 
 
-def showCrit(msg):
-    critErrWin(msg)
+def showCrit(msg, title='Error', okBtnTxt='exit'):
+    critErrWin(msg, title, okBtnTxt)

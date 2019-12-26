@@ -3,7 +3,7 @@ from base import baseWin
 
 
 class cfmWin(baseWin):
-    def __init__(self, msg, title='Confirm', okBtnTxt='OK', ngBtnTxt='cancel'):
+    def __init__(self, msg, title, okBtnTxt, ngBtnTxt):
         # init
         super().__init__()
         self.root.title(title)
@@ -36,5 +36,5 @@ class cfmWin(baseWin):
         return self.bool
 
 
-def show(msg):
-    return cfmWin(msg).getBool()
+def show(msg, title='Confirm', okBtnTxt='OK', ngBtnTxt='cancel'):
+    return cfmWin(msg, title, okBtnTxt, ngBtnTxt).getBool()

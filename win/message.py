@@ -3,7 +3,7 @@ from base import baseWin
 
 
 class msgWin(baseWin):
-    def __init__(self, msg, title='Message', okBtnTxt='OK'):
+    def __init__(self, msg, title, okBtnTxt):
         # init
         super().__init__()
         self.root.title(title)
@@ -22,6 +22,6 @@ class msgWin(baseWin):
         okButton.pack(fill='x', expand=True)
 
 
-def show(msg):
-    msgWin(msg).root.wait_window()
+def show(msg, title='Message', okBtnTxt='OK'):
+    msgWin(msg, title, okBtnTxt).root.wait_window()
     return True

@@ -3,7 +3,7 @@ from base import baseWin
 
 
 class askynWin(baseWin):
-    def __init__(self, msg, title='YES/NO', okBtnTxt='YES', ngBtnTxt='NO'):
+    def __init__(self, msg, title, okBtnTxt, ngBtnTxt):
         # init
         super().__init__()
         self.root.title(title)
@@ -36,5 +36,5 @@ class askynWin(baseWin):
         return self.bool
 
 
-def show(msg):
-    return askynWin(msg).getBool()
+def show(msg, title='YES/NO', okBtnTxt='YES', ngBtnTxt='NO'):
+    return askynWin(msg, title, okBtnTxt, ngBtnTxt).getBool()
